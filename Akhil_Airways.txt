@@ -1,0 +1,186 @@
+import java.io.*;
+class airline_ticket
+{
+void international()throws IOException
+{
+int i;
+InputStreamReader read=new InputStreamReader(System.in);
+BufferedReader in=new BufferedReader(read);
+for(i=1;i<=1;i++)
+{
+System.out.println("Type the starting point(Mumbai,New Delhi,Bangalore or Kolkata)");
+String sp=in.readLine();//starting point
+System.out.println("Type the ending point(Abu Dhabi,New York,Paris,London,Cape Town,Sydney,Auckland,Barbados or Colombo)");
+String ep=in.readLine();//ending point
+System.out.println("Type EC for Economic Class");
+System.out.println("Type BC for Business Class");
+String ebc=in.readLine();
+System.out.println("Type the date,month&year");
+int dd=Integer.parseInt(in.readLine());//date
+int mm=Integer.parseInt(in.readLine());//month
+int yyyy=Integer.parseInt(in.readLine());//year
+System.out.println("Type the number of passengers");
+int np=Integer.parseInt(in.readLine());//no. of passengers
+System.out.println();
+if(sp.equals("Mumbai")||sp.equals("New Delhi")||sp.equals("Bangalore")||sp.equals("Kolkata")||ep.equals("Abu Dhabi")||ep.equals("New York")||ep.equals("Paris")||ep.equals("London")||ep.equals("Cape Town")||ep.equals("Sydney")||ep.equals("Auckland")||ep.equals("Barbados")||ep.equals("Colombo"))//cheks whether the flight place selected is available or not
+{
+if(dd>31||mm>12||yyyy<2012||yyyy>2148)//Checks whether the date entered is valid or not
+{
+System.out.println("Invalid date");
+break;
+}
+else
+{}
+}
+else
+{
+System.out.println("No flights available");
+break;
+}
+System.out.println("Reservation details:");
+System.out.println("-------------");
+if(ebc.equals("EC"))
+System.out.println("Class : Economic");
+if(ebc.equals("BC"))
+System.out.println("Class : Business");
+System.out.println("-------------");
+System.out.println("Boarding at: "+sp);
+System.out.println("Arriving at: "+ep);
+System.out.println("-------------");
+System.out.println("Plane no.: "+(int)(Math.random()*1000));
+System.out.print("Seat no.: ");
+for(i=1;i<=np;i++)
+{
+System.out.print((int)(Math.random()*1000)%108+" ");
+}
+System.out.println();
+System.out.println("Date of departure :"+dd+"/"+mm+"/"+yyyy);
+System.out.println("Time : "+(int)(Math.random()*100+12)%24+":"+(int)(Math.random()*10)%6+(int)(Math.random()*10)%10);
+System.out.println("-------------");
+int cph=0;
+
+if(ebc.equals("EC"))
+{
+cph=(int)(Math.random()*10000)%20000;
+while(cph<10000)
+cph=cph*2;
+}
+if(ebc.equals("BC"))
+{
+cph=(int)(Math.random()*20000)%40000;
+while(cph<20000)
+cph=cph*2;
+}
+
+System.out.println("Cost of the flight per head : Rs."+(cph));
+System.out.println("Total cost of the flight    : Rs."+(np*cph));
+}
+}
+void national()throws IOException
+{
+int i;
+InputStreamReader read=new InputStreamReader(System.in);
+BufferedReader in=new BufferedReader(read);
+for(i=1;i<=1;i++)
+{
+System.out.println("Type the starting point(Mumbai,New Delhi,Bangalore,Kolkata,Kochi,Chandigarh or Chennai)");
+String sp=in.readLine();//starting point
+System.out.println("Type the ending point(Mumbai,New Delhi,Bangalore,Kolkata,Kochi,Chandigarh or Chennai)");
+String ep=in.readLine();//ending point
+System.out.println("Type EC for Economic Class");
+System.out.println("Type BC for Business Class");
+String ebc=in.readLine();
+System.out.println("Type the date,month&year");
+int dd=Integer.parseInt(in.readLine());//date
+int mm=Integer.parseInt(in.readLine());//month
+int yyyy=Integer.parseInt(in.readLine());//year
+System.out.println("Type the number of passengers");
+int np=Integer.parseInt(in.readLine());//no. of passengers
+System.out.println();
+if(sp.equals("Mumbai")||sp.equals("New Delhi")||sp.equals("Bangalore")||sp.equals("Kolkata")||sp.equals("Kochi")||sp.equals("Chandigarh")||sp.equals("Chennai"))//cheks whether the flight place selected is available or not
+{
+if(dd>31||mm>12||yyyy<2012||yyyy>2148)//Checks whether the date entered is valid or not
+{
+System.out.println("Invalid date");
+break;
+}
+else
+{}
+}
+else
+{
+System.out.println("No flights available");
+break;
+}
+System.out.println("Reservation details:");
+System.out.println("-------------");
+if(ebc.equals("EC"))
+System.out.println("Class : Economic");
+if(ebc.equals("BC"))
+System.out.println("Class : Business");
+System.out.println("-------------");
+System.out.println("Boarding at: "+sp);
+System.out.println("Arriving at: "+ep);
+System.out.println("-------------");
+System.out.println("Plane no.: "+(int)(Math.random()*1000));
+System.out.print("Seat no.: ");
+for(i=1;i<=np;i++)
+{
+System.out.print((int)(Math.random()*1000)%108+" ");
+}
+System.out.println();
+System.out.println("Date of departure :"+dd+"/"+mm+"/"+yyyy);
+System.out.println("Time : "+(int)(Math.random()*100+12)%24+":"+(int)(Math.random()*10)%6+(int)(Math.random()*10)%10);
+System.out.println("-------------");
+int cph=0;
+
+if(ebc.equals("EC"))
+{
+cph=(int)(Math.random()*5000)%10000;
+while(cph<5000)
+cph=cph*2;
+}
+if(ebc.equals("BC"))
+{
+cph=(int)(Math.random()*10000)%20000;
+while(cph<10000)
+cph=cph*2;
+}
+
+System.out.println("Cost of the flight per head : Rs."+(cph));
+System.out.println("Total cost of the flight    : Rs."+(np*cph));
+}
+}
+public static void main()throws IOException
+{
+InputStreamReader read=new InputStreamReader(System.in);
+BufferedReader in=new BufferedReader(read);
+airline_ticket at=new airline_ticket();
+int choice=0;
+String cont="";
+do
+{
+System.out.println("Welcome to Akhil Airways airline ticket booking center");
+System.out.println("Press 1 for International Flights");
+System.out.println("Press 2 for National Flights");
+choice=Integer.parseInt(in.readLine());
+switch(choice)
+{
+case 1:
+at.international();
+break;
+
+case 2:
+at.national();
+break;
+
+default :
+System.out.println("Wrong choice");
+break;
+}
+System.out.println("Do want to book another flight ?");
+System.out.println("Press y for yes & n for no");
+cont=in.readLine();
+System.out.print('\f');
+}while(cont.equals("y"));
+}

@@ -1,0 +1,93 @@
+import java.util.Scanner;
+import java.io.*;
+class mobile_store
+{
+int bill;
+void nokia()throws IOException
+{
+InputStreamReader read=new InputStreamReader(System.in); 
+BufferedReader in=new BufferedReader(read);
+System.out.println("Enter the code of the phone you want to buy");
+System.out.println("8. for N8");
+System.out.println("800. for Lumia 800");
+System.out.println("6. for X6");
+System.out.println("731. for Nokia 731(Tap and share)");
+System.out.println("3. for C3");
+int ch=Integer.parseInt(in.readLine());
+switch(ch)
+{
+case 8 : bill=bill+11990; break;
+case 800 : bill=bill+13990; break;
+case 6 : bill=bill+10990; break;
+case 731 : bill=bill+9990; break;
+case 3 : bill=bill+6990; break;
+default : System.out.println("Wrong choice"); break;
+}
+}
+void se()throws IOException
+{
+InputStreamReader read=new InputStreamReader(System.in);
+BufferedReader in=new BufferedReader(read);
+}
+void bb()throws IOException
+{
+InputStreamReader read=new InputStreamReader(System.in);
+BufferedReader in=new BufferedReader(read);
+}
+void sam()throws IOException
+{
+InputStreamReader read=new InputStreamReader(System.in);
+BufferedReader in=new BufferedReader(read);
+System.out.println("Enter the code of the phone you want to buy");
+System.out.println("1. for Corby");
+System.out.println("2. for GalaxyTab");
+System.out.println("3. for Galaxy S II");
+System.out.println("4. for Champ");
+System.out.println("5. for Glaxy y");
+int ch=Integer.parseInt(in.readLine());
+switch(ch)
+{
+case 1 : bill=bill+6999; break;
+case 2 : bill=bill+25999; break;
+case 3 : bill=bill+11999; break;
+case 4 : bill=bill+4999; break;
+case 5 : bill=bill+9999; break;
+default : System.out.println("Wrong choice"); break;
+}
+}
+void mtrla()throws IOException
+{
+InputStreamReader read=new InputStreamReader(System.in);
+BufferedReader in=new BufferedReader(read);
+}
+public static void main()throws IOException
+{
+System.out.println("Welcome to Akhil's mobile_store");
+mobile_store ms=new mobile_store();
+InputStreamReader read=new InputStreamReader(System.in);
+BufferedReader in=new BufferedReader(read);
+String ch;
+do
+{
+System.out.println("Select the mobile company");
+System.out.println("1. Nokia");
+System.out.println("2. Sony Ericsson");
+System.out.println("3. BlackBerry");
+System.out.println("4. Samsung");
+System.out.println("5. Motorola");
+int mchoice=Integer.parseInt(in.readLine());
+switch(mchoice)
+{
+case 1: ms.nokia(); break;
+case 2: ms.se(); break;
+case 3: ms.bb(); break;
+case 4: ms.sam(); break;
+case 5: ms.mtrla(); break;
+default : System.out.println("Wrong choice"); break;
+}
+System.out.println("Do you wish to buy a new mobile?");
+System.out.println("Press y for yes or n for no");
+ch=in.readLine();
+}while(ch.equals("y"));
+}
+}
